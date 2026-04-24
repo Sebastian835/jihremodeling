@@ -1,1 +1,1719 @@
-HOLA MUNDO :)
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIH Remodeling Services LLC | From Maintenance to Transformation</title>
+    <link rel="icon" type="image/png" href="img/logo.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --navy: #0D1B2E;
+            --navy-mid: #132540;
+            --navy-lt: #1A3055;
+            --gold: #C9A84C;
+            --gold-lt: #E2C47A;
+            --gold-dk: #A8893A;
+            --white: #FFFFFF;
+            --ivory: #F8F6F1;
+            --pearl: #EDEAE3;
+            --ink: #161616;
+            --slate: #3D4654;
+            --muted: #7A828F;
+            --border: rgba(201, 168, 76, 0.18);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background: var(--ivory);
+            color: var(--ink);
+            overflow-x: hidden;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            background: rgba(13, 27, 46, 0.97);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            transition: box-shadow .3s;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 32px rgba(0, 0, 0, 0.35);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            height: 42px;
+            width: auto;
+        }
+
+        .logo-text .brand {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--white);
+            letter-spacing: 0.02em;
+            line-height: 1;
+        }
+
+        .logo-text .sub {
+            font-size: 0.58rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-top: 3px;
+            font-family: 'Jost', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.6);
+            transition: color .25s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 100%;
+            height: 1px;
+            background: var(--gold);
+            transition: right .3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-lt);
+        }
+
+        .nav-links a:hover::after {
+            right: 0;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--white);
+            transition: all .3s;
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ── HERO ── */
+        #home {
+            min-height: 100vh;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* subtle diagonal lines */
+        .hero-lines {
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(-60deg,
+                    rgba(201, 168, 76, 0.03) 0px, rgba(201, 168, 76, 0.03) 1px,
+                    transparent 1px, transparent 60px);
+        }
+
+        /* gold glow orb */
+        .hero-orb {
+            position: absolute;
+            right: 10%;
+            top: 20%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-img-side {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 46%;
+            overflow: hidden;
+        }
+
+        .hero-img-side::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, var(--navy) 0%, rgba(13, 27, 46, 0.6) 35%, transparent 65%);
+            z-index: 1;
+        }
+
+        .hero-img-side::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+            z-index: 2;
+        }
+
+        .hero-img-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+
+        /* tagline strip */
+        .hero-strip {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: rgba(201, 168, 76, 0.35);
+            padding: 0 12px;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            padding: 130px 5% 80px 7%;
+            max-width: 700px;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 24px;
+        }
+
+        .hero-tag::before {
+            content: '';
+            width: 28px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .hero-title {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: clamp(3rem, 6vw, 5.8rem);
+            color: var(--white);
+            line-height: 1.0;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+
+        .hero-title .italic {
+            font-style: italic;
+            color: var(--gold-lt);
+        }
+
+        .hero-sub {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 32px;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-tagline-text {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--gold);
+            margin-bottom: 36px;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 0;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            padding: 0 36px 0 0;
+            margin-right: 36px;
+            border-right: 1px solid var(--border);
+        }
+
+        .hero-stat:last-child {
+            border-right: none;
+            padding-right: 0;
+            margin-right: 0;
+        }
+
+        .hero-stat .n {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: 2.8rem;
+            color: var(--gold-lt);
+            line-height: 1;
+        }
+
+        .hero-stat .l {
+            font-size: 0.68rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.35);
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 15px 34px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all .35s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-gold::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gold);
+            transform: translateX(-100%);
+            transition: transform .35s ease;
+        }
+
+        .btn-gold:hover::before {
+            transform: translateX(0);
+        }
+
+        .btn-gold:hover {
+            color: var(--navy);
+        }
+
+        .btn-gold span,
+        .btn-gold i {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── COMMONS ── */
+        section {
+            padding: 100px 5%;
+        }
+
+        .eyebrow {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .eyebrow::before {
+            content: '';
+            width: 28px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .sec-title {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            color: var(--ink);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+        }
+
+        .sec-title .gold {
+            color: var(--gold-dk);
+        }
+
+        .sec-title .it {
+            font-style: italic;
+        }
+
+        /* ── ABOUT ── */
+        #about {
+            background: var(--white);
+        }
+
+        .about-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+            margin-top: 56px;
+        }
+
+        .about-visual {
+            position: relative;
+            height: 500px;
+        }
+
+        .av-main {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80%;
+            height: 380px;
+            object-fit: contain;
+            background: #0a0f18;
+        }
+
+        .av-sec {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+            height: 220px;
+            object-fit: contain;
+            background: #0a0f18;
+            border: 5px solid var(--white);
+        }
+
+        .av-badge {
+            position: absolute;
+            bottom: 50px;
+            right: 0;
+            background: var(--navy);
+            padding: 22px 26px;
+            text-align: center;
+            z-index: 3;
+            border-left: 3px solid var(--gold);
+        }
+
+        .av-badge .bn {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: 2.8rem;
+            color: var(--gold-lt);
+            line-height: 1;
+            display: block;
+        }
+
+        .av-badge .bl {
+            font-size: .62rem;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .5);
+            margin-top: 4px;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .about-content p {
+            font-size: .97rem;
+            line-height: 1.88;
+            color: var(--slate);
+        }
+
+        .about-content p strong {
+            color: var(--ink);
+        }
+
+        .about-rule {
+            height: 1px;
+            background: linear-gradient(to right, var(--gold), transparent);
+        }
+
+        .mv-duo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .mv-box {
+            padding: 22px;
+            background: var(--ivory);
+            border-top: 2px solid var(--gold);
+        }
+
+        .mv-box h4 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: .95rem;
+            color: var(--navy);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mv-box h4 i {
+            color: var(--gold);
+            font-size: .8rem;
+        }
+
+        .mv-box p {
+            font-size: .86rem;
+            line-height: 1.72;
+            color: var(--muted);
+        }
+
+        /* ── BENEFITS ── */
+        #benefits {
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #benefits::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(-60deg,
+                    rgba(201, 168, 76, 0.025) 0px, rgba(201, 168, 76, 0.025) 1px,
+                    transparent 1px, transparent 60px);
+        }
+
+        #benefits .sec-title {
+            color: var(--white);
+        }
+
+        #benefits .eyebrow {
+            color: var(--gold-lt);
+        }
+
+        #benefits .eyebrow::before {
+            background: var(--gold-lt);
+        }
+
+        .ben-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            margin-top: 56px;
+            background: var(--border);
+        }
+
+        .ben-card {
+            background: var(--navy);
+            padding: 38px 28px;
+            position: relative;
+            overflow: hidden;
+            transition: background .35s;
+        }
+
+        .ben-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .4s ease;
+        }
+
+        .ben-card:hover {
+            background: var(--navy-mid);
+        }
+
+        .ben-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .ben-num {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: rgba(201, 168, 76, 0.07);
+            line-height: 1;
+            margin-bottom: -12px;
+        }
+
+        .ben-icon {
+            width: 46px;
+            height: 46px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .ben-icon i {
+            font-size: 1.1rem;
+            color: var(--gold);
+        }
+
+        .ben-card h3 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .ben-card p {
+            font-size: .86rem;
+            line-height: 1.72;
+            color: rgba(255, 255, 255, .38);
+        }
+
+        /* ── SERVICES ── */
+        #services {
+            background: var(--pearl);
+        }
+
+        .srv-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            margin-top: 56px;
+            background: rgba(201, 168, 76, 0.15);
+        }
+
+        .srv-card {
+            background: var(--white);
+            overflow: hidden;
+            transition: all .35s;
+        }
+
+        .srv-card:hover {
+            box-shadow: 0 16px 48px rgba(13, 27, 46, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .srv-top {
+            height: 4px;
+            background: linear-gradient(to right, var(--gold-dk), var(--gold-lt));
+        }
+
+        .srv-body {
+            padding: 34px 32px;
+        }
+
+        .srv-num {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: rgba(13, 27, 46, 0.05);
+            line-height: 1;
+            margin-bottom: -8px;
+        }
+
+        .srv-head-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .srv-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .srv-icon i {
+            font-size: 1rem;
+            color: var(--gold);
+        }
+
+        .srv-card h3 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--navy);
+        }
+
+        .srv-card p {
+            font-size: .88rem;
+            line-height: 1.8;
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .tag {
+            background: rgba(13, 27, 46, 0.06);
+            color: var(--navy-lt);
+            font-size: .7rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-left: 2px solid var(--gold-dk);
+        }
+
+        /* ── GALLERY ── */
+        #gallery {
+            background: var(--navy);
+            padding: 100px 0;
+        }
+
+        .gal-head {
+            padding: 0 5%;
+            margin-bottom: 48px;
+        }
+
+        .gal-head .sec-title {
+            color: var(--white);
+        }
+
+        .gal-head .eyebrow {
+            color: var(--gold);
+        }
+
+        .gal-head .eyebrow::before {
+            background: var(--gold);
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .c-track {
+            display: flex;
+            transition: transform .65s cubic-bezier(.25, .46, .45, .94);
+        }
+
+        .c-slide {
+            min-width: 100%;
+            height: 560px;
+            background: #060d18;
+            position: relative;
+        }
+
+        .c-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .c-slide::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, .5) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .c-ctrls {
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            z-index: 10;
+        }
+
+        .c-btn {
+            width: 48px;
+            height: 48px;
+            background: transparent;
+            border: 1px solid var(--gold);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: .9rem;
+            transition: all .3s;
+        }
+
+        .c-btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .c-counter {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: .95rem;
+            color: var(--gold-lt);
+            letter-spacing: .12em;
+            background: rgba(0, 0, 0, .5);
+            padding: 10px 20px;
+            backdrop-filter: blur(4px);
+            min-width: 80px;
+            text-align: center;
+        }
+
+        /* ── CONTACT ── */
+        #contact {
+            background: var(--ivory);
+        }
+
+        .contact-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            margin-top: 56px;
+            align-items: start;
+        }
+
+        .c-card {
+            background: var(--navy);
+            padding: 24px 28px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 28px;
+            border-left: 3px solid var(--gold);
+        }
+
+        .c-mono {
+            width: 52px;
+            height: 52px;
+            background: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--navy);
+            flex-shrink: 0;
+        }
+
+        .c-card .nm {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--white);
+        }
+
+        .c-card .rl {
+            font-size: .7rem;
+            color: rgba(201, 168, 76, .8);
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-top: 3px;
+        }
+
+        .info-list {
+            margin-bottom: 32px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(13, 27, 46, 0.1);
+        }
+
+        .info-row:first-child {
+            border-top: 1px solid rgba(13, 27, 46, 0.1);
+        }
+
+        .i-ic {
+            width: 36px;
+            height: 36px;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .i-ic i {
+            font-size: .85rem;
+            color: var(--gold);
+        }
+
+        .i-lbl {
+            font-size: .63rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--gold-dk);
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .i-val {
+            font-size: .97rem;
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        .btn-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .cb {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 18px;
+            text-decoration: none;
+            font-size: .82rem;
+            font-weight: 500;
+            letter-spacing: .06em;
+            transition: all .3s;
+        }
+
+        .cb i {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .cb span {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cb .lbl {
+            font-size: .6rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            opacity: .65;
+            margin-bottom: 2px;
+        }
+
+        .cb .val {
+            font-size: .88rem;
+            font-weight: 600;
+        }
+
+        .cb-call {
+            background: var(--navy);
+            color: var(--white);
+            border-left: 2px solid var(--gold);
+        }
+
+        .cb-call:hover {
+            background: var(--navy-lt);
+            transform: translateY(-2px);
+        }
+
+        .cb-wa {
+            background: #14532d;
+            color: #fff;
+            border-left: 2px solid #22c55e;
+        }
+
+        .cb-wa:hover {
+            background: #166534;
+            transform: translateY(-2px);
+        }
+
+        .cb-email {
+            background: var(--gold-dk);
+            color: var(--white);
+            border-left: 2px solid var(--gold-lt);
+        }
+
+        .cb-email:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        .cb-sms {
+            background: #1e293b;
+            color: var(--white);
+            border-left: 2px solid #475569;
+        }
+
+        .cb-sms:hover {
+            background: #334155;
+            transform: translateY(-2px);
+        }
+
+        .map-wrap {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .map-wrap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gold);
+            z-index: 1;
+        }
+
+        .map-wrap iframe {
+            width: 100%;
+            height: 420px;
+            border: none;
+            display: block;
+        }
+
+        .map-foot {
+            background: var(--navy);
+            padding: 13px 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, .55);
+            font-size: .82rem;
+        }
+
+        .map-foot i {
+            color: var(--gold);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--ink);
+            padding: 60px 5% 28px;
+            color: rgba(255, 255, 255, .42);
+        }
+
+        .f-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 52px;
+            margin-bottom: 48px;
+        }
+
+        .f-brand img {
+            height: 48px;
+            margin-bottom: 16px;
+        }
+
+        .f-brand .ftag {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            font-size: .95rem;
+            color: var(--gold-lt);
+            margin-bottom: 12px;
+        }
+
+        .f-brand p {
+            font-size: .85rem;
+            line-height: 1.75;
+        }
+
+        .f-col h4 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            font-size: .85rem;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .f-col ul {
+            list-style: none;
+        }
+
+        .f-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .f-col ul li a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, .38);
+            font-size: .86rem;
+            transition: color .3s;
+            font-weight: 400;
+        }
+
+        .f-col ul li a:hover {
+            color: var(--gold-lt);
+        }
+
+        .f-bot {
+            border-top: 1px solid rgba(255, 255, 255, .06);
+            padding-top: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .f-bot p {
+            font-size: .8rem;
+        }
+
+        .f-tag {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            color: var(--gold);
+            font-size: .88rem;
+        }
+
+        /* ── REVEAL ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .d1 {
+            transition-delay: .1s;
+        }
+
+        .d2 {
+            transition-delay: .2s;
+        }
+
+        .d3 {
+            transition-delay: .3s;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media(max-width:900px) {
+
+            .about-wrap,
+            .contact-wrap {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .about-visual {
+                height: 320px;
+            }
+
+            .av-main {
+                width: 85%;
+                height: 270px;
+            }
+
+            .ben-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .srv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .f-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        @media(max-width:680px) {
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: rgba(13, 27, 46, 0.99);
+                flex-direction: column;
+                padding: 16px 5%;
+                gap: 0;
+                border-top: 1px solid var(--border);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 14px 0;
+                font-size: .9rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .ben-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .c-slide {
+                height: 300px;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 24px;
+            }
+
+            .hero-stat {
+                border-right: none;
+                padding-right: 0;
+                margin-right: 0;
+            }
+
+            .btn-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mv-duo {
+                grid-template-columns: 1fr;
+            }
+
+            .f-bot {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-strip {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav id="mainNav">
+        <a href="#home" class="nav-logo">
+            <img src="img/logo.png" alt="JIH Remodeling" onerror="this.style.display='none'">
+            <div class="logo-text">
+                <div class="brand">JIH Remodeling Services</div>
+                <div class="sub">Remodel · Paint · Maintain</div>
+            </div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home">
+        <div class="hero-lines"></div>
+        <div class="hero-orb"></div>
+        <div class="hero-strip">JIH Remodeling Services LLC</div>
+        <div class="hero-img-side">
+            <img src="https://images.unsplash.com/photo-1765277789236-18b14cb7869f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="JIH Work">
+        </div>
+        <div class="hero-content">
+            <div class="hero-tag">North Carolina · Est. LLC</div>
+            <h1 class="hero-title">
+                JIH<br>
+                <span class="italic">Remodeling</span>
+            </h1>
+            <p class="hero-sub">Services, LLC</p>
+            <p class="hero-tagline-text">"From maintenance to transformation."</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="n">5+</div>
+                    <div class="l">Years Experience</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="n">100%</div>
+                    <div class="l">Quality Work</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="n">R·P·M</div>
+                    <div class="l">Remodel Paint Maintain</div>
+                </div>
+            </div>
+            <a href="#contact" class="btn-gold">
+                <span>Request a Free Estimate</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="eyebrow">Who We Are</div>
+        <h2 class="sec-title">Craftsmanship &amp; Care<br>in <span class="it gold">Every Project</span></h2>
+
+        <div class="about-wrap">
+            <div class="about-visual reveal">
+                <img class="av-main" src="img/2.jpg" alt="JIH Work"
+                    onerror="this.src='https://images.unsplash.com/photo-1682888818620-94875adf5bb9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'">
+                <img class="av-sec" src="img/3.jpg" alt="JIH Detail"
+                    onerror="this.src='https://images.unsplash.com/photo-1706670359282-e5182f748973?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'">
+                <div class="av-badge">
+                    <span class="bn">5+</span>
+                    <span class="bl">Years of<br>Experience</span>
+                </div>
+            </div>
+
+            <div class="about-content reveal d2">
+                <div>
+                    <p><strong>JIH Remodeling Services, LLC</strong> was founded to provide dependable and complete
+                        property services for residential and commercial clients. Led by <strong>Jose Anael Chavez
+                            Sanchez</strong>, our company is committed to offering practical solutions that improve the
+                        functionality, appearance, and condition of every space we work on.</p>
+                    <p>We understand that properties require continuous care, upgrades, and attention. That's why we
+                        approach every project with responsibility, professionalism, and a strong focus on quality
+                        results that clients can trust. Great service is built on communication, trust, and consistency
+                        — and that's exactly what we deliver.</p>
+                </div>
+                <div class="about-rule"></div>
+                <div class="mv-duo">
+                    <div class="mv-box">
+                        <h4><i class="fas fa-bullseye"></i> Mission</h4>
+                        <p>To provide high-quality remodeling, maintenance, and cleaning services that improve and
+                            protect our clients' properties every time.</p>
+                    </div>
+                    <div class="mv-box">
+                        <h4><i class="fas fa-eye"></i> Vision</h4>
+                        <p>To become a trusted remodeling and property service company recognized for reliability,
+                            professionalism, and consistent results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section id="benefits">
+        <div class="eyebrow">Why Choose Us</div>
+        <h2 class="sec-title">The <span style="color:var(--gold-lt);font-style:italic;">JIH</span> Standard</h2>
+
+        <div class="ben-grid">
+            <div class="ben-card reveal">
+                <div class="ben-num">01</div>
+                <div class="ben-icon"><i class="fas fa-medal"></i></div>
+                <h3>5 Years of Experience</h3>
+                <p>Half a decade of hands-on remodeling and property maintenance work, bringing skill and consistency to
+                    every residential and commercial project.</p>
+            </div>
+            <div class="ben-card reveal d1">
+                <div class="ben-num">02</div>
+                <div class="ben-icon"><i class="fas fa-shield-halved"></i></div>
+                <h3>Professional &amp; Reliable</h3>
+                <p>We show up, communicate clearly, and deliver what we promise. Reliability isn't a bonus — it's our
+                    foundation.</p>
+            </div>
+            <div class="ben-card reveal d2">
+                <div class="ben-num">03</div>
+                <div class="ben-icon"><i class="fas fa-star"></i></div>
+                <h3>High-Quality Finishes</h3>
+                <p>Every surface, every corner, every detail is handled with precision. We don't consider a job done
+                    until the finish meets our standard.</p>
+            </div>
+            <div class="ben-card reveal d1">
+                <div class="ben-num">04</div>
+                <div class="ben-icon"><i class="fas fa-magnifying-glass"></i></div>
+                <h3>Attention to Detail</h3>
+                <p>From prep work to final touches, we approach every task with the care and focus that produces truly
+                    lasting results.</p>
+            </div>
+            <div class="ben-card reveal d2">
+                <div class="ben-num">05</div>
+                <div class="ben-icon"><i class="fas fa-building"></i></div>
+                <h3>Residential &amp; Commercial</h3>
+                <p>Whether it's a home renovation or a commercial property upgrade, we bring the same expertise and
+                    dedication to both environments.</p>
+            </div>
+            <div class="ben-card reveal d3">
+                <div class="ben-num">06</div>
+                <div class="ben-icon"><i class="fas fa-expand"></i></div>
+                <h3>Full-Service Capabilities</h3>
+                <p>From painting and remodeling to cleaning, maintenance, and outdoor care — we handle it all under one
+                    reliable roof.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="eyebrow">What We Do</div>
+        <h2 class="sec-title">Our Core <span class="gold">Services</span></h2>
+
+        <div class="srv-grid">
+            <div class="srv-card reveal">
+                <div class="srv-top"></div>
+                <div class="srv-body">
+                    <div class="srv-num">01</div>
+                    <div class="srv-head-row">
+                        <div class="srv-icon"><i class="fas fa-paint-roller"></i></div>
+                        <h3>Painting Services</h3>
+                    </div>
+                    <p>Interior and exterior painting for residential and commercial properties. From full repaints to
+                        accent walls, cabinet refinishing, and meticulous surface preparation.</p>
+                    <div class="tags">
+                        <span class="tag">Interior &amp; Exterior</span>
+                        <span class="tag">Cabinet Painting</span>
+                        <span class="tag">Accent Walls</span>
+                        <span class="tag">Surface Prep</span>
+                        <span class="tag">Touch-Ups</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="srv-card reveal d1">
+                <div class="srv-top"></div>
+                <div class="srv-body">
+                    <div class="srv-num">02</div>
+                    <div class="srv-head-row">
+                        <div class="srv-icon"><i class="fas fa-hammer"></i></div>
+                        <h3>Remodeling Services</h3>
+                    </div>
+                    <p>Full interior renovations including kitchen upgrades, bathroom remodeling, drywall installation
+                        and repair, minor carpentry, and flooring installation.</p>
+                    <div class="tags">
+                        <span class="tag">Kitchen &amp; Bath</span>
+                        <span class="tag">Drywall</span>
+                        <span class="tag">Flooring</span>
+                        <span class="tag">Carpentry</span>
+                        <span class="tag">Renovations</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="srv-card reveal">
+                <div class="srv-top"></div>
+                <div class="srv-body">
+                    <div class="srv-num">03</div>
+                    <div class="srv-head-row">
+                        <div class="srv-icon"><i class="fas fa-spray-can-sparkles"></i></div>
+                        <h3>Cleaning &amp; Junk Removal</h3>
+                    </div>
+                    <p>Comprehensive cleaning services from general residential to deep cleaning, move-in/out cleaning,
+                        post-construction cleanup, and general junk removal.</p>
+                    <div class="tags">
+                        <span class="tag">Deep Cleaning</span>
+                        <span class="tag">Move-In/Out</span>
+                        <span class="tag">Post-Construction</span>
+                        <span class="tag">Junk Removal</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="srv-card reveal d1">
+                <div class="srv-top"></div>
+                <div class="srv-body">
+                    <div class="srv-num">04</div>
+                    <div class="srv-head-row">
+                        <div class="srv-icon"><i class="fas fa-leaf"></i></div>
+                        <h3>Maintenance &amp; Outdoor Care</h3>
+                    </div>
+                    <p>General property maintenance, preventive upkeep, minor repairs, rental property care, plus yard
+                        maintenance, gardening services, and outdoor space upkeep.</p>
+                    <div class="tags">
+                        <span class="tag">General Repairs</span>
+                        <span class="tag">Preventive Maintenance</span>
+                        <span class="tag">Yard Maintenance</span>
+                        <span class="tag">Gardening</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <div class="gal-head">
+            <div class="eyebrow">Our Work</div>
+            <h2 class="sec-title" style="color:var(--white)">Work in <span
+                    style="color:var(--gold-lt);font-style:italic;">Progress</span> &amp; Completed</h2>
+        </div>
+
+        <div class="carousel">
+            <div class="c-track" id="galTrack">
+                <div class="c-slide"><img src="img/1.jpg" alt="JIH Work 1"
+                        onerror="this.parentElement.style.background='#060d18'"></div>
+                <div class="c-slide"><img src="img/2.jpg" alt="JIH Work 2"
+                        onerror="this.parentElement.style.background='#060d18'"></div>
+                <div class="c-slide"><img src="img/3.jpg" alt="JIH Work 3"
+                        onerror="this.parentElement.style.background='#060d18'"></div>
+                <div class="c-slide"><img src="img/4.jpg" alt="JIH Work 4"
+                        onerror="this.parentElement.style.background='#060d18'"></div>
+                <div class="c-slide"><img src="img/5.jpg" alt="JIH Work 5"
+                        onerror="this.parentElement.style.background='#060d18'"></div>
+                <div class="c-slide"><img src="img/6.jpg" alt="JIH Work 6"
+                        onerror="this.parentElement.style.background='#060d18'"></div>
+                <div class="c-slide"><img src="img/7.jpg" alt="JIH Work 7"
+                        onerror="this.parentElement.style.background='#060d18'"></div>
+                <div class="c-slide"><img src="img/8.jpg" alt="JIH Work 8"
+                        onerror="this.parentElement.style.background='#060d18'"></div>
+                <div class="c-slide"><img src="img/9.jpg" alt="JIH Work 9"
+                        onerror="this.parentElement.style.background='#060d18'"></div>
+                <div class="c-slide"><img src="img/10.jpg" alt="JIH Work 10"
+                        onerror="this.parentElement.style.background='#060d18'"></div>
+                <div class="c-slide"><img src="img/11.jpg" alt="JIH Work 11"
+                        onerror="this.parentElement.style.background='#060d18'"></div>
+                <div class="c-slide"><img src="img/12.jpg" alt="JIH Work 12"
+                        onerror="this.parentElement.style.background='#060d18'"></div>
+                <div class="c-slide"><img src="img/13.jpg" alt="JIH Work 13"
+                        onerror="this.parentElement.style.background='#060d18'"></div>
+                <div class="c-slide"><img src="img/14.jpg" alt="JIH Work 14"
+                        onerror="this.parentElement.style.background='#060d18'"></div>
+                <div class="c-slide"><img src="img/15.jpg" alt="JIH Work 15"
+                        onerror="this.parentElement.style.background='#060d18'"></div>
+            </div>
+            <div class="c-ctrls">
+                <button class="c-btn" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+                <div class="c-counter" id="cCounter">01 / 15</div>
+                <button class="c-btn" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="eyebrow">Get in Touch</div>
+        <h2 class="sec-title">Start Your <span class="it gold">Project</span> Today</h2>
+
+        <div class="contact-wrap">
+            <div class="reveal">
+                <div class="c-card">
+                    <div class="c-mono">JC</div>
+                    <div>
+                        <div class="nm">Jose Anael Chavez Sanchez</div>
+                        <div class="rl">Owner &amp; Lead Professional</div>
+                    </div>
+                </div>
+
+                <div class="info-list">
+                    <div class="info-row">
+                        <div class="i-ic"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <div class="i-lbl">Phone</div>
+                            <div class="i-val">336-920-5167</div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="i-ic"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <div class="i-lbl">Email</div>
+                            <div class="i-val">jyhservicellc@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="i-ic"><i class="fas fa-location-dot"></i></div>
+                        <div>
+                            <div class="i-lbl">Address</div>
+                            <div class="i-val">508 Avalon PL, North Carolina</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-grid">
+                    <a href="tel:3369205167" class="cb cb-call">
+                        <i class="fas fa-phone"></i>
+                        <span><span class="lbl">Call Us</span><span class="val">336-920-5167</span></span>
+                    </a>
+                    <a href="https://wa.me/13369205167" class="cb cb-wa" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span><span class="lbl">WhatsApp</span><span class="val">Message Us</span></span>
+                    </a>
+                    <a href="mailto:jyhservicellc@gmail.com" class="cb cb-email">
+                        <i class="fas fa-envelope"></i>
+                        <span><span class="lbl">Email</span><span class="val">Send Message</span></span>
+                    </a>
+                    <a href="sms:3369205167" class="cb cb-sms">
+                        <i class="fas fa-comment-sms"></i>
+                        <span><span class="lbl">Text / SMS</span><span class="val">Quick Message</span></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="reveal d2">
+                <div class="map-wrap">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.0!2d-79.9959!3d36.0726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s508+Avalon+Pl%2C+North+Carolina!5e0!3m2!1sen!2sus!4v1710000000000"
+                        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="map-foot">
+                    <i class="fas fa-location-dot"></i>
+                    508 Avalon PL, North Carolina
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="f-grid">
+            <div class="f-brand">
+                <img src="img/logo.png" alt="JIH Remodeling" onerror="this.style.display='none'">
+                <div class="ftag">"From maintenance to transformation."</div>
+                <p>Reliable property improvement services for residential and commercial clients. Quality remodeling,
+                    maintenance, and cleaning solutions in North Carolina.</p>
+            </div>
+            <div class="f-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="f-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Painting</a></li>
+                    <li><a href="#services">Remodeling</a></li>
+                    <li><a href="#services">Cleaning &amp; Junk Removal</a></li>
+                    <li><a href="#services">Maintenance &amp; Outdoor</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="f-bot">
+            <p>&copy; 2026 JIH Remodeling Services LLC. All rights reserved. | North Carolina</p>
+            <div class="f-tag">"From maintenance to transformation."</div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.getElementById('mainNav').classList.toggle('scrolled', scrollY > 40);
+        });
+
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+            document.getElementById('hamburger').classList.toggle('open');
+        }
+        document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
+            document.getElementById('navLinks').classList.remove('open');
+            document.getElementById('hamburger').classList.remove('open');
+        }));
+
+        // GALLERY
+        let cur = 0, total = 15;
+        function updateGal() {
+            document.getElementById('galTrack').style.transform = `translateX(-${cur * 100}%)`;
+            document.getElementById('cCounter').textContent = `${String(cur + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+        }
+        function showSlide(i) { cur = i; if (cur >= total) cur = 0; if (cur < 0) cur = total - 1; updateGal(); }
+        function moveSlide(d) { showSlide(cur + d); }
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowLeft') moveSlide(-1);
+            if (e.key === 'ArrowRight') moveSlide(1);
+        });
+
+        let tx = 0;
+        document.getElementById('galTrack').addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; });
+        document.getElementById('galTrack').addEventListener('touchend', e => {
+            const d = e.changedTouches[0].screenX - tx;
+            if (d < -50) moveSlide(1); if (d > 50) moveSlide(-1);
+        });
+
+        setInterval(() => moveSlide(1), 5200);
+
+        // REVEAL
+        const obs = new IntersectionObserver(entries => entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        }), { threshold: .12 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    </script>
+</body>
+
+</html>
